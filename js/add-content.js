@@ -1,8 +1,9 @@
 document.write("Hi! Welcome to Codees. To get started would you perfer coffee or something to nibble on?");
-var userInput = document.write(" What type of beverage would you like? n\
+var userInput = InputEvent(" What type of beverage would you like? n\
 The options are ice coffee, ice lattee or you may have a classic hot n\
 coffee to keep warm? ");
-confirm(userInput===false);
+confirm(userInput);
+
 
 
     if (userInput === icecoffee) {
