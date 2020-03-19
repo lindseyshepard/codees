@@ -73,6 +73,13 @@ article{
 
 }
 
+#id{
+    border-color: plum;
+    border: 14px;
+    border-radius: 4%;
+
+}
+
 footer>ul{
     margin-bottom: 0;
     padding: 0;

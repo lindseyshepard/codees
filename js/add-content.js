@@ -11,11 +11,32 @@ if (userInput === null || userInput === "") {
         choiceOfCoffee = prompt.apply();
         return choiceOfCoffee;
 } else {
-prompt('we hae hot!');
+prompt('we have hot!');
 }
+document.write(customerSaid());
 document.write('<h2>' + choiceOfCoffee + '</h2>');
 
 
+var customerTotal=0;
+var iceLattee= 3;
+var icecoffee=2.5;
+var hotcoffee=2;
+choiceOfCoffee = [iceLattee, icecoffee, hotcoffee];
+for (var i = 0; i < 3; i++){
+    if (i === iceLattee){
+customerTotal+=3;
+    }
+    else if (i === icecoffee){
+        customerTotal+=2.5;
+    }
+    else if (i === hotcoffee){
+        customerTotal+=2;
+    } else {
+        return customerTotal;
+    }
+    
+    document.write('Your total is: $' + customerTotal);
+}
 
 
 if (userInput === icecoffee) {
