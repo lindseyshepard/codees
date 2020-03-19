@@ -1,26 +1,33 @@
-document.write("Hi! Welcome to Codees. To get started would you perfer coffee or something to nibble on?");
+var customerSaid = document.prompt("Hi! Welcome to Codees. To get started would you perfer coffee or something to nibble on?");
+if(customerSaid===yes){
+    return userInput();
+}
 var choiceOfCoffee;
-var userInput = InputEvent(" What type of beverage would you like? The options are ice coffee, ice lattee or you may have a classic hot coffee to keep warm? ");
- if ( userInput=== null || userInput===""){
- choiceOfCoffee = "No coffee for you!";
- } else {
-     choiceOfCoffee = "We have that!";
- }
+var userInput = prompt(" Are you in the mood for something hot or something cold? ");
+if (userInput === null || userInput === "") {
+    choiceOfCoffee = "No coffee for you!";
+} else if (userInput === 'cold') {
+    prompt('You can choose an ice coffee or ice latte? ');
+        choiceOfCoffee = prompt.apply();
+        return choiceOfCoffee;
+} else {
+prompt('we hae hot!');
+}
 document.write('<h2>' + choiceOfCoffee + '</h2>');
 
 
 
 
-    if (userInput === icecoffee) {
-        confirm('Enjoy your ice coffee!');
-    } else if (userInput = iceLattee) {
-        confirm("Enjoy your Lattee and have the best day!");
-    } else if (userInput = hotcoffee) {
-        confirm('Here is your hot coffee! Stay warm.');
-    } else {
-        document.write('Please pick an option from the menu. ');
-    }
-
+if (userInput === icecoffee) {
+    confirm('Enjoy your ice coffee!');
+} else if (userInput = iceLattee) {
+    confirm("Enjoy your Lattee and have the best day!");
+} else if (userInput = hotcoffee) {
+    confirm('Here is your hot coffee! Stay warm.');
+} else {
+    document.write('Please pick an option from the menu. ');
+}
+document.write(userInput);
 
 
 
