@@ -96,23 +96,25 @@ function ask() {
     }
     if (perference === ice) {
         var totalLattee = 0;
-        var totalIceCoffee=0;
+        var totalIceCoffee = 0;
         var totalHotCoffee = 0;
         var total = totalIceCoffee + totalHotCoffee + totalLattee;
 
-        var iceChoices = prompt('Ice coffee or ice lattee?')
-        if (iceChoices === icecoffee) {
-            document.getElementById("icecoffee").innerHTML;
-            totalIceCoffee++;
-        } else if (perference === iceLattee) {
-            document.getElementById("icelattee").innerHTML;
-            totalLattee++;
-        } else {
+        var iceChoices = prompt('Ice coffee or ice lattee?');
+        while (iceChoices !== 'icecoffee' || iceChoices !== 'icelattee') {
             var iceChoices = prompt('please enter icecoffee or icelattee');
+            if (iceChoices === icecoffee) {
+                document.getElementById("icecoffee").innerHTML;
+                totalIceCoffee++;
+            } else if (iceChoices === iceLattee) {
+                document.getElementById(icelattee).innerHTML; //does the ID need to be in quotes?
+                totalLattee++;
+            } else {
+                return iceChoices;
+            }
         }
-        return iceChoices;
     } else {
-        
+
         var hotChoice = prompt('How many hot coffees would you like? ');
         document.getElementById("hotcoffee").innerHTML;
         totalHotCoffee++;
@@ -123,4 +125,3 @@ function ask() {
     return total;
 }
 
-ask();
