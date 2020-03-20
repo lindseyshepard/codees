@@ -95,24 +95,32 @@ function ask() {
         var perference = ('please choose ice or hot');
     }
     if (perference === ice) {
+        var totalLattee = 0;
+        var totalIceCoffee=0;
+        var totalHotCoffee = 0;
+        var total = totalIceCoffee + totalHotCoffee + totalLattee;
+
         var iceChoices = prompt('Ice coffee or ice lattee?')
         if (iceChoices === icecoffee) {
-            document.createElement(icecoffee);
+            document.getElementById("icecoffee").innerHTML;
+            totalIceCoffee++;
         } else if (perference === iceLattee) {
-            document.createElement(iceLattee);
+            document.getElementById("icelattee").innerHTML;
+            totalLattee++;
         } else {
             var iceChoices = prompt('please enter icecoffee or icelattee');
         }
         return iceChoices;
     } else {
+        
         var hotChoice = prompt('How many hot coffees would you like? ');
-        var total = 0;
-        total += hotChoice;
-        document.write(total);
-        document.createElement(hotcoffee);
+        document.getElementById("hotcoffee").innerHTML;
+        totalHotCoffee++;
 
 
     }
+    document.write(total);
+    return total;
 }
-// document.createElement(icecoffee);
-//  document.write(icecoffee);
+
+ask();
