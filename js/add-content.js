@@ -70,58 +70,47 @@
 // document.getElementById("hot").addEventListener("Click", function () {
 //     getCoffee(hotcoffee);
 // })
-var buyCoffee = prompt("Hi! Welcome to Codees. Would you like to buy a coffee?");
+//var buyCoffee = prompt("Hi! Welcome to Codees. Would you like to buy a coffee?");
 
-while (buyCoffee !== "yes" || buyCoffee !== "no") {
-    var buyCoffee = prompt('Would you like to buy a coffee?');
+// while (buyCoffee !== "yes" || buyCoffee !== "no") {
+//     var buyCoffee = prompt('Would you like to buy a coffee?');
 
 
-    if (buyCoffee === "yes") {
-        ask();
-    } else if (buyCoffee === "no") {
-        var exitGreeting = document.write('Have a great day!');
-    }
-}
+//     if (buyCoffee === "yes") {
+//         ask();
+//     } else if (buyCoffee === "no") {
+//         var exitGreeting = document.write('Have a great day!');
+//     }
+// }
 
 // coffee images
 //var icecoffee = <img src="http://1.bp.blogspot.com/-UV9fcFYETGc/ThYLf-46zMI/AAAAAAAAEXI/3FgR0-Y4ypg/s1600/coffee4.JPG"></img>
 //var iceLattee = <img src="http://www.bramptonfoods.ca/wp-content/uploads/2015/05/blended-ice-coffee.jpg"></img>
 //var hotcoffee = <img src="https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/58324-iStock-157528129.jpg?itok=kihwEBm5"></img>
 function ask() {
-
-
-    var perference = prompt('Would you like a hot coffee or an ice coffee/latte? ');
-    while (perference !== 'hot' || perference !== 'ice') {
-        var perference = ('please choose ice or hot');
+    var item;
+    var cart = '';
+    var perference = prompt('Would you like a hot beverage or cold beverage? ');
+    while (perference !== 'hot' && perference !== 'cold') {
+        var perference = prompt('please choose hot or cold');
     }
-    if (perference === ice) {
-        var totalLattee = 0;
-        var totalIceCoffee = 0;
-        var totalHotCoffee = 0;
-        var total = totalIceCoffee + totalHotCoffee + totalLattee;
-
-        var iceChoices = prompt('Ice coffee or ice lattee?');
-        while (iceChoices !== 'icecoffee' || iceChoices !== 'icelattee') {
-            var iceChoices = prompt('please enter icecoffee or icelattee');
-            if (iceChoices === icecoffee) {
-                document.getElementById("icecoffee").innerHTML;
-                totalIceCoffee++;
-            } else if (iceChoices === iceLattee) {
-                document.getElementById(icelattee).innerHTML; //does the ID need to be in quotes?
-                totalLattee++;
-            } else {
-                return iceChoices;
-            }
+    if (perference === 'cold') {
+        var iceChoices = prompt('ice coffee or ice lattee?');
+        while (iceChoices !== 'ice coffee' || iceChoices !== 'ice lattee') {
+            var iceChoices = prompt('please enter "ice coffee" or "ice lattee"');
         }
-    } else {
-
-        var hotChoice = prompt('How many hot coffees would you like? ');
-        document.getElementById("hotcoffee").innerHTML;
-        totalHotCoffee++;
-
-
+        if (iceChoices === 'ice coffee') {
+            item = '<img src="/images/icecoffee.JPG">';
+        } else if (iceChoices === 'ice lattee') {
+            item = '<img src="/images/icelattee.jpg">';
+        } else if (perference === 'hot') {
+            alert('You selected a hot coffee!');
+            item = '<img src="/images/hotcoffee.jpg">';
+        }
     }
-    document.write(total);
-    return total;
+    var hotChoice = prompt('How many' + iceChoices + ' do you want?');
+    for (var i = 0; i <= hotChoice; i++) {
+        cart = cart + item;
+    }
+    return cart;
 }
-
